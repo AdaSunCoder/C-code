@@ -1,0 +1,12 @@
+//1.求出10至1000之内能同时被2、3、7整除的数，并输出。
+#include<stdio.h>
+int main()
+{
+  int n;
+  for(n=10;n<1000;n++) 
+  {
+  	if(n%2==0&&n%3==0&&n%7==0)
+  	printf("%d ",n);
+  }
+  return 0;
+}
