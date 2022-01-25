@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<string.h>
+void reverse(char a[])
+{
+	int j;
+	int n = strlen(a);
+	for (j = 0;j < n / 2;j++)
+	{
+		char t = a[j];
+		a[j] = a[n - 1 - j];
+		a[n - 1 - j] = t;
+	}
+}
+void convert(int m, int k, char a[])
+{
+	int i,r;
+	for (i = 0;m;i++)
+	{
+		r = m % k;
+		m = m / k;
+		a[i]=r+'0';//适用于0-9；如果整型余数大于9，对应的字符为 r-10+'A'; 
+	}
+	a[i] = '\0';
+	reverse(a);
+	puts(a);
+}
+int main()
+{
+	int m;
+	printf("请输入一个十进制正整数：");
+	scanf_s("%d", &m);
+	printf("让他转化的进制数：");
+	int k;
+	scanf_s("%d", &k);
+	char a[100];
+	convert(m, k, a);
+	return 0;
+}
