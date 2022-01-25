@@ -1,0 +1,38 @@
+#include<stdio.h>
+#define N 8
+#define M 8
+int main()
+{
+	int i, j;
+	int flag, n;
+	int a[M][N] = { {0,3,5,7,11,13,17,19},{1,2,3,9,16,17,21,18}, {3,5,4,14,22,19,26,15},{5,11,9,6,16,15,23,12},{9,12,8,7,8,9,10,11},{7,6,15,14,13,10,9,10},{13,4,7,24,20,18,12,12},{15,10,9,8,25,19,16,14} };
+	for (i = 0;i < M;i++)
+	{
+		for (j = 0;j < N;j++)
+		{
+			printf("%-4d",a[i][j]);
+		}
+		printf("\n");
+	}
+
+	for (i = 0;i < M;i++)
+	{
+		int hangmax = a[i][0];
+		for (j = 0;j < N;j++)
+		{
+			if (a[i][j] > hangmax)
+				hangmax = a[i][j];
+			    n = j;
+		}
+		flag = 1;
+		for (int k = 0;k < M;k++)
+		{
+			if (a[k][ n] < hangmax) flag = 0;
+		}
+		if (flag == 1)
+			printf("鞍点是：a[%d][%d]\n", i, hangmax);
+	}
+	if (flag == 0)
+		printf("该数组不存在鞍点");
+		return 0;
+}
