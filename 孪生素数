@@ -1,0 +1,25 @@
+#include<stdio.h>
+int isprime(int p)
+{
+	int i;
+  for(i=2;i<=p/2;i++)
+		if(p%i==0)
+			return 0;
+		if(i==p/2)
+			return 1;
+}
+void twin_prime(int begin,int end)
+{
+	int j;
+	for(j=begin;j<=end;j++)
+	{
+		if(isprime(j)&&isprime(j+2))  printf("%d,%d\n",j,j+2);
+	}
+}
+int main()
+{
+	int begin,end;
+	scanf("%d%d",&begin,&end);
+	twin_prime(begin,end);
+	return 0;
+}
