@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()                                         /*逆序输出*/
+{
+	int a[] = { 1,2,3,4,5 };
+	int i;
+	for (i = 0;i < 5 / 2;i++)
+	{
+		int t = a[i];
+		a[i] = a[5 - 1 - i];
+		a[5 - 1 - i] = t;
+	}
+	return 0;
+}
