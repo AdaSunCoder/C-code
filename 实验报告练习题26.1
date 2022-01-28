@@ -1,0 +1,20 @@
+#include<stdio.h>
+int s = 0;
+void sumFact(int n)
+{
+	int i;
+	int k = 1;
+	for (i = 1;i <= n;i++)
+		{
+			k = k * i;
+			s = s + k;
+		}
+	printf("%d", s);
+}
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	sumFact(n);
+	return 0;
+}
