@@ -1,0 +1,21 @@
+#include<stdio.h>
+int fun(int i)
+{
+	int static f = 1;
+	f = f * i;
+	static int s = 0;
+	s = s +f;
+	return s;
+}
+int main()
+{
+	int i;
+	int n;
+	scanf("%d", &n);
+	for (i = 1;i <n;i++)
+	{   
+		fun(i);
+	}
+	printf("%d", fun(n));
+	return 0;
+}
