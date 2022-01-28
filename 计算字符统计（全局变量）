@@ -1,0 +1,23 @@
+#include<stdio.h>
+int word = 0;
+int num = 0;
+int others = 0;                      
+void jisuan(char a[])
+{
+	int i;
+	for (i = 0;a[i] != '\0';i++)
+	{
+		if (a[i] >= 'a' && a[i] <= 'z' || a[i] >= 'A' && a[i] <= 'Z') word++;
+		else if (a[i] >= '0' && a[i] <= '9') num++;
+		else others++;
+	}
+}
+int main()
+{
+	char s[100];
+	gets(s);
+	jisuan(s);
+	printf("%d%d%d", word, num, others);
+	return 0;
+
+}
