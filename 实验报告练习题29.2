@@ -1,0 +1,35 @@
+#include<stdio.h>
+void fun(int* m, int* n, int* k)
+{
+	int t= 0;
+	if (*m < *n)
+	{
+		t = *m;
+		*m = *n;
+		*n= t;
+	}
+	if (*m < *k)
+	{
+		t = *m;
+		*m = *k;
+		*k = t;
+	}
+	if (*n< *k)
+	{
+		t = *n;
+		*n = *k;
+		*k = t;
+	}
+	printf("%d,%d,%d", *m, *n, *k);
+}
+int main()
+{
+	int a, b, c;
+	int t = 0;
+	scanf("%d%d%d", &a, &b, &c);
+	int* p1 = &a;
+	int* p2 = &b;
+	int* p3 = &c;
+	fun(p1,p2,p3);
+	return 0;
+}
