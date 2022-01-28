@@ -1,0 +1,18 @@
+#include<stdio.h>
+int fun(int x, int n)
+{
+	static int f = 1;
+	f = f * n * x;
+	return f;
+}
+int main()
+{
+	int x, n;
+	scanf("%d%d", &x, &n);
+	int i;
+	for (i = 1;i <= n;i++)
+	{
+		printf("x%d=%d\n",i, fun(x, i));
+	}
+	return 0;
+}
