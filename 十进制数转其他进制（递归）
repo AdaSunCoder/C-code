@@ -14,3 +14,25 @@ int main()
 	printf("%d", change(n, p));
 	return 0;
 }
+
+
+
+
+
+#include<stdio.h>
+void change(int n, int p)
+{
+	int a;
+	a = n % p;
+	if (n >= p)
+		change(n / p, p);
+	printf("%d", a);
+}
+int main()
+{
+	int n, p;
+	scanf_s("%d%d", &n, &p);
+	change(n, p);
+	return 0;
+}
+
