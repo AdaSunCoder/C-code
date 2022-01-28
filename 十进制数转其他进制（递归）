@@ -1,0 +1,16 @@
+#include<stdio.h>
+int change(int n, int p)
+{
+	int a;
+	a = n % p;
+	if (n >= p)
+		return a + 10 * change(n / p, p);           //这里的返回值注意！
+	else return a;
+}
+int main()
+{
+	int n, p;
+	scanf_s("%d%d", &n, &p);
+	printf("%d", change(n, p));
+	return 0;
+}
