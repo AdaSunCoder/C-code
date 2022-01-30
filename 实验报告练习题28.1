@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int reverse(int n)
+{
+	int s = 0;
+	while (n)
+	{
+		s = s * 10 + n % 10;
+		n = n / 10;
+	}
+	return s;
+}
+void squ_mirr()
+{
+	int i;
+	for (i = 1; i < 1000;i++)
+	{
+		if (reverse(i * i) == reverse(i) * reverse(i)) printf("%d\n", i);
+	}
+}
+int main()
+{
+	squ_mirr();
+	return 0;
+}
