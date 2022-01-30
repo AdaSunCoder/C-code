@@ -1,0 +1,23 @@
+#include<stdio.h>
+void fun(char str[], char c)
+{
+	int i;
+	int j = 0;
+	for (i = 0;str[i] != 0;i++)
+	{
+		if (str[i] != c)
+		{
+			str[j++] = str[i];
+		 }
+	}
+	str[j] = '\0';
+	puts(str);
+}
+int main()
+{
+	char str[100], c;
+	gets(str);
+	scanf("%c", &c);
+	fun(str,c);
+	return 0;
+}
