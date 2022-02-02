@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+	char string[100];
+	int i,num,flag=1;
+	gets(string);
+	if(string[0]=='-')
+	{
+		flag=-1;
+		num=0;
+	}
+     else
+	{
+		flag=1;
+		num=string[0]-'0';
+    }
+	for(i=1;string[i]!='\0';i++)
+	num=string[i]-'0'+num*10;
+	num*=flag;
+	printf("%d\n",num);
+	return 0;
+}
