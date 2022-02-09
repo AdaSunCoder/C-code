@@ -1,0 +1,29 @@
+#include<stdio.h>
+int findmax(float s[][5], float* p)
+{
+	int i = 0;
+	for (i = 0;i < 6;i++)
+	{     
+		s[i][4] = s[i][0] + s[i][1] + s[i][2] + s[i][3];
+		
+	}
+	float max = 0;
+	int j = 0;
+	for (i = 0;i < 6;i++)
+	{
+		if (s[i][4] > max)
+		{
+			max = s[i][4];
+			j = i;
+		}
+	}
+	p = &max;
+	return  j + 1;
+}
+int main()
+{
+	float score[6][5] = { {12,65,38,40},{52,36,78,98},{57,84,56,45},{29,76,36,45},{56,81,64,19},{26,45,68,79} };
+	float* a=NULL;
+	printf("6个学生中总成绩最好的是第%d个学生", findmax(score, a));
+	return 0;
+}
