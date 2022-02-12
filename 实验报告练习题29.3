@@ -1,0 +1,37 @@
+
+#include<stdio.h>
+void fun(int* a, int n, int* odd, int* even)
+{
+	int *p = a;
+	for (p=a;p<a+n;p++)
+	{
+		if (*p% 2 == 0)
+		{
+			*even += *p;
+		}
+		else
+		{
+			*odd += *p;
+		}
+	}
+}
+int main()
+{
+	int n;
+	int a[100];
+	printf("请输入数组个数：\n");
+	scanf_s("%d", &n);
+	int i = 0;
+	for (i = 0;i < n;i++)
+	{
+		a[i] = rand() % 101;
+		printf("%d ", a[i]);
+	}
+	int odd = 0;
+	int even = 0;
+	int* o = &odd;
+	int* e = &even;
+	fun(a, n, o,e);
+	printf("奇数和：%d\n偶数和：%d\n", odd, even);
+	return 0;
+}
